@@ -42,7 +42,7 @@ public class Video {
 		this.actor = actor;
 	}
 
-	//비디오 정보 출력
+	//비디오 정보 출력 (자신의 필드값을 제어(수정 등)하거나 출력)
 	public void videoInfo() {
 		System.out.println("회원이 대여한 비디오 번호 : " + sno);
 		System.out.println("회원이 대여한 비디오 제목 : " + title);

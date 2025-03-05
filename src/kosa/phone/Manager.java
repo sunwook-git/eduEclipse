@@ -11,7 +11,7 @@ public class Manager {
 	//private Scanner sc;
 	
 	
-	//기본 생성자 : 
+	//기본 생성자 : 매개변수를 받을 필요 없으므로 기본 생성자에서 
 	public Manager() {
 		arr = new PhoneInfo[10];
 		//sc = new Scanner(System.in);

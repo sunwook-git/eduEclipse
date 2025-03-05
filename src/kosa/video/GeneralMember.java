@@ -6,7 +6,7 @@ public class GeneralMember {
 	private String id;
 	private String name;
 	private String address;
-	private Video rentalVideo;   // 3. this.rentalVideo가 
+	private Video rentalVideo;   // GeneralMember 와 Video의 연관관계(주체 : GeneralMember, 대상: rentalVideo)
 	
 	//기본 생성자
 	public GeneralMember() {}

@@ -12,6 +12,7 @@ public class BankSystem {
 	}
 	
 	public void showMenu(){		//show method 만들기
+		//사용자의 입력을 받기위해 초기화
 		String  menu = null;			
 		String id = null;
 		String name = null;
@@ -42,19 +43,25 @@ public class BankSystem {
 				System.out.print("잔고를 입력하세요: ");
 				balance = Long.parseLong(readFromKeyboard());
 				
+				//사용자가 메뉴 1번을 입력 후 id,name,balance를 입력 시 
+				//mybank 클래스의 addCustomer 메소드를 실행
 				myBank.addCustomer(id, name, balance);
 				
 			}
 			else if(menu.equals("2")){
 				System.out.print("고객ID를 입력하세요: ");
 				id = readFromKeyboard();
+				//MyBank의 getCustomer메소드에서 반환된 Customer객체가 cust 변수에 할당				
 				Customer cust = myBank.getCustomer(id);
+				//cust는 Customer 객체이므로 Customer 클래스에 getAccount 메서드가 있으므로
+				//접근이 가능하며 Account 객체를 반환하므로 Account 클래스의 getBalance를 호출할수 있다 
 				System.out.println(cust.getId() +":" + cust.getName() + ": "
 						+ cust.getAccount().getBalance());	
 			
 			}
 			else if(menu.equals("3")){
 				
+				//
 				Customer[] allCust = myBank.getAllCustomers();
 				
 				for(int i=0;i<allCust.length;i++){

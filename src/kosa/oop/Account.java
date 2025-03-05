@@ -66,7 +66,14 @@ public class Account {
 		return accountNo;
 	}
 
-	//Ä¸½¶È­
+	public int getBalance() {
+		return balance;
+	}
+
+	public void setBalance(int balance) {
+		this.balance = balance;
+	}
+	
 	public void setAccountNo(String accountNo) {
 		this.accountNo = accountNo;
 	}

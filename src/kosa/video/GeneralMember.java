@@ -57,6 +57,7 @@ public class GeneralMember {
 		System.out.println("회원의 이름 : " + name);
 		System.out.println("회원의 주소 : " + address);
 		rentalVideo.videoInfo();   //대여한 비디오 정보
+		
 	}
 	
 	public void rental(Video video) {    // 2.main에서 매개변수를 통해 전달받은 v1의 정보가 this.rentalVideo에 대입

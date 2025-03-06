@@ -2,48 +2,69 @@ package kosa.phone;
 
 import java.util.Scanner;
 
+import kosa.oop.MinusAccount;
+
 public class Manager {
-	//ÀüÈ­¹øÈ£ ¸ñ·ÏÀ» °ü¸®ÇÏ´Â ±â´É(Ãß°¡, Ãâ·Â, °Ë»ö µîµî)
+	//ì „í™”ë²ˆí˜¸ ëª©ë¡ì„ ê´€ë¦¬í•˜ëŠ” ê¸°ëŠ¥(ì¶”ê°€, ì¶œë ¥, ê²€ìƒ‰ ë“±ë“±)
 	
-	//¿©·¯°³ÀÇ PhoneInfo °´Ã¼¸¦ °ü¸®ÇÏ±â À§ÇÏ¿© ¹è¿­»ç¿ë (Manager °´Ã¼¸¦ »ı¼ºÇÒ‹š ¸Ş¸ğ¸® ¿Ã¶ó¿È)
+	//ì—¬ëŸ¬ê°œì˜ PhoneInfo ê°ì²´ë¥¼ ê´€ë¦¬í•˜ê¸° ìœ„í•˜ì—¬ ë°°ì—´ì‚¬ìš© (Manager ê°ì²´ë¥¼ ìƒì„±í• ï¿½ï¿½ ë©”ëª¨ë¦¬ ì˜¬ë¼ì˜´)
 	private PhoneInfo arr[];
 	private int count;
+	private int menu;
 	//private Scanner sc;
 	
 	
-	//±âº» »ı¼ºÀÚ : ¸Å°³º¯¼ö¸¦ ¹ŞÀ» ÇÊ¿ä ¾øÀ¸¹Ç·Î ±âº» »ı¼ºÀÚ¿¡¼­ 
+	//ê¸°ë³¸ ìƒì„±ì : ë§¤ê°œë³€ìˆ˜ë¥¼ ë°›ì„ í•„ìš” ì—†ìœ¼ë¯€ë¡œ ê¸°ë³¸ ìƒì„±ìì—ì„œ 
 	public Manager() {
 		arr = new PhoneInfo[10];
 		//sc = new Scanner(System.in);
 	}
 	
-	//ÀüÈ­¹øÈ£ Ãß°¡
+	//ì „í™”ë²ˆí˜¸ ì¶”ê°€
 	public void addPhoneInfo() {
-		System.out.print("ÀÌ¸§ : ");
-		String name = DataInput.sc.nextLine();
-		System.out.print("ÀüÈ­¹øÈ£ : ");
-		String phoneNo = DataInput.sc.nextLine();
-		System.out.print("»ı³â¿ùÀÏ : ");
-		String birth = DataInput.sc.nextLine();
+		//1.ì „ì²´ 2.ë™ì°½ 3.ì§ì¥
+		System.out.println("1.ì „ì²´ 2.ë™ì°½ 3.ì§ì¥");
+		System.out.print("ë©”ë‰´ì„ íƒ : ");
+		DataInput.sc.nextLine();
 		
-		//»ı¼ºÇÑ PhoneInfo¸¦ ¹è¿­¿¡ ³ÖÀ½(°´Ã¼¸¦ »ı¼ºÇÏ¸é »ı¼ºÀÚ·Î ÀÌµ¿ - PhoneInfoÀÇ »ı¼ºÀÚ·Î ÀÌµ¿)
+		switch (menu) {
+		case 1:
+			System.out.print("ì´ë¦„ : ");
+			String name = DataInput.sc.nextLine();
+			System.out.print("ì „í™”ë²ˆí˜¸ : ");
+			String phoneNo = DataInput.sc.nextLine();
+			System.out.print("ìƒë…„ì›”ì¼ : ");
+			String birth = DataInput.sc.nextLine();			
+			break;
+		case 2:
+			
+			break;
+		case 3:
+			
+			break;
+		}
+
+		
+		//ìƒì„±í•œ PhoneInfoë¥¼ ë°°ì—´ì— ë„£ìŒ(ê°ì²´ë¥¼ ìƒì„±í•˜ë©´ ìƒì„±ìë¡œ ì´ë™ - PhoneInfoì˜ ìƒì„±ìë¡œ ì´ë™)
 		arr[count++] = new PhoneInfo(name, phoneNo, birth);
 		
-		//¸Ş¼¼Áö Ãâ·Â
-		System.out.println("ÀüÈ­¹øÈ£°¡ µî·Ï µÇ¾ú½À´Ï´Ù.");
+		//ë©”ì„¸ì§€ ì¶œë ¥
+		System.out.println("ì „í™”ë²ˆí˜¸ê°€ ë“±ë¡ ë˜ì—ˆìŠµë‹ˆë‹¤.");
 	}
 	
-	//ÀüÃ¼ ¸ñ·Ï Ãâ·Â(phoneinfo¿¡¼­ ÇÑ °´Ã¼¿¡ ´ëÇÑ ³»¿ë Ãâ·ÂÀ» ÇÏ´Â show¸Ş¼­µå¸¦ °¡Á®¿Í¼­ ÀüÃ¼¸ñ·ÏÀ» Ãâ·Â
+	//ì „ì²´ ëª©ë¡ ì¶œë ¥(phoneinfoì—ì„œ í•œ ê°ì²´ì— ëŒ€í•œ ë‚´ìš© ì¶œë ¥ì„ í•˜ëŠ” showë©”ì„œë“œë¥¼ ê°€ì ¸ì™€ì„œ ì „ì²´ëª©ë¡ì„ ì¶œë ¥
 	public void listPhoneInfo() {
-		System.out.println("**ÀüÃ¼¸ñ·Ï**");
+		//1.ì „ì²´ 2.ë™ì°½ 3.ì§ì¥
+		System.out.println("1.ì „ì²´ 2.ë™ì°½ 3.ì§ì¥");
+		System.out.println("**ì „ì²´ëª©ë¡**");
 		for (int i = 0; i < count; i++) {
 			arr[i].show();
 		}
 	}
 	
-	// °Ë»öÇÏ°íÀÚ ÇÏ´Â ÀÌ¸§À¸·Î 1°³ÀÇ PhoneInfo °´Ã¼ÀÇ ³»¿ëÀ» Ãâ·Â(Ã£Áö ¸øÇÏ¿´À¸¸é Ã£Áö ¸øÇß´Ù´Â ¸Ş¼¼Áö Ãâ·Â)
+	// ê²€ìƒ‰í•˜ê³ ì í•˜ëŠ” ì´ë¦„ìœ¼ë¡œ 1ê°œì˜ PhoneInfo ê°ì²´ì˜ ë‚´ìš©ì„ ì¶œë ¥(ì°¾ì§€ ëª»í•˜ì˜€ìœ¼ë©´ ì°¾ì§€ ëª»í–ˆë‹¤ëŠ” ë©”ì„¸ì§€ ì¶œë ¥)
 	public void searchPhoneInfo() {
-		System.out.print("ÀÌ¸§ °Ë»ö : ");
+		System.out.print("ì´ë¦„ ê²€ìƒ‰ : ");
 		String target = DataInput.sc.nextLine();
 		int idx = -1;
 		
@@ -59,8 +80,5 @@ public class Manager {
 		}
 	}
 	
-	public void delPhoneInfo() {
-		
-	}
 }
 

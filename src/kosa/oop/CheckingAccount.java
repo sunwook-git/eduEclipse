@@ -22,5 +22,11 @@ public class CheckingAccount extends Account {
 			throw new Exception("결제불능");
 		}
 		return withdraw(amount);		
+	}
+
+	@Override
+	public void printAccount() {		
+		super.printAccount();		//부모에 있는 printAccount 메소드 호출
+		System.out.println("카드번호: " + cardNo);		
 	}	
 }

@@ -6,12 +6,12 @@ public class Main {
 
 	public static void main(String[] args) {
 		//Scanner sc  = new Scanner(System.in);		
-		Manager m = new Manager();			//°´Ã¼¿¡¼­ new¸¦ »ı¼ºÇÏ¸é »ı¼ºÀÚ·Î ÀÌµ¿ÇÔ
-			
+		Manager m = new Manager();			//ê°ì²´ì—ì„œ newë¥¼ ìƒì„±í•˜ë©´ ìƒì„±ìë¡œ ì´ë™í•¨
+		Company cp = new Company();
 		
 		while(true) {			
-			System.out.println("1.Ãß°¡ 2.Ãâ·Â 3.°Ë»ö 4.Á¾·á");
-			System.out.print("¸Ş´ºÀÔ·Â : ");
+			System.out.println("1.ì¶”ê°€ 2.ì¶œë ¥ 3.ê²€ìƒ‰ 4.ì¢…ë£Œ");
+			System.out.print("ë©”ë‰´ì…ë ¥ : ");
 			String menu = DataInput.sc.nextLine();
 			
 			switch (menu) {
@@ -25,7 +25,7 @@ public class Main {
 				m.searchPhoneInfo();
 				break;
 			case "4":
-				System.out.println("ÇÁ·Î±×·¥ Á¾·á");
+				System.out.println("í”„ë¡œê·¸ë¨ ì¢…ë£Œ");
 				return;
 			}
 		}

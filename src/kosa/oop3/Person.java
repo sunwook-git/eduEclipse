@@ -10,12 +10,21 @@ public class Person {
 	public Person() {}
 
 	//생성자
-	public Person(String name, Role role) {
+	//texi와 dump가  Role이라는 implement 인터페이스를 통하여 받을 수 있음
+	public Person(String name, Role role) {		
 		super();
 		this.name = name;
 		this.role = role;
 	}
 	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	public void doIt() {
 		role.doing();
 	}

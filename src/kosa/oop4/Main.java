@@ -49,6 +49,5 @@ public class Main {
 		};
 		Thread t = new Thread(r);
 		t.start();
-		
 	}
 }

@@ -107,49 +107,53 @@ public class Manager {
 		}
 	}
 
-	// 자기 전화번호 수정
-	public void changePhoneInfo() {
-
-		System.out.print("이름 검색 : ");
-		String search = DataInput.sc.nextLine();
+	// 전화번호 수정
+	public void updatePhoneInfo() {
 		
+		//이름을 입력 => 해당 PhoneInfo 검색 => 수정 전화번호 => 전화번호 수정이 완료
+		System.out.print("이름 입력 : ");
+		String name = DataInput.sc.nextLine();
 		int idx = -1;
-		
 		for (int i = 0; i < count; i++) {
-			if (search .equals(arr[i].getName())) {
-				arr[i].show();
-				idx = i;
-				System.out.print("수정 할 번호: ");
+			if (name.equals(arr[i].getName())) {
+				System.out.print("수정 전화번호: ");
 				String phoneNo = DataInput.sc.nextLine();
-				arr[count++] = new PhoneInfo(arr[i].getName(), phoneNo, arr[i].getBirth());
-				break;
+				//arr[i].getName()에서 수정할 배열을 찾았으므로 해당 Phoneinfo객체의 PhoneNo를 새값으로 갱신
+				arr[i].setPhoneNo(phoneNo);	 
+				idx = i;	//마지막으로 수정된 인덱스
 			}
 		}
-		// 메세지 출력
-		System.out.println("**전화번호가 수정 되었습니다**");
 		
 		if (idx == -1) {
-			System.out.println("Not Found");
+			System.out.println("존재하지 않습니다.");
 		}
 	}
 
 	// 삭제
 	public void deletePhoneInfo() {
-		System.out.print("삭제 할 이름 검색 : ");
+		
+		//이름을 입력 => 해당 PhoneInfo객체 검색 -> 인덱스를 찾기 -> 해당 객체 삭제
+		System.out.print("이름 입력 : ");
 		String name = DataInput.sc.nextLine();
 		int idx = -1;
-		
 		for (int i = 0; i < count; i++) {
-			if (name.equals(arr[i].getName())) {
-				for (int j = 0; j < count -1 ; j++) {
-					arr[j] = arr[j+1];					
-				}
-				count--;
-				break;
+			if (name.equals(arr[i].getName())) {				
+				idx = i;	//i 값으로 몇번쨰 인덱스인지 찾았음
 			}
+		}
 		
-			
+		//idx값이 -1이 아니면 삭제할 인덱스가 있으므로 else에 작성
+		if (idx == -1) {
+			System.out.println("존재하지 않습니다.");
+		}	else {
+			for (int i = idx; i < count; i++) {
+				if (i == arr.length -1 ) {	//배열의 마지막 값인지 물어보고 null값을 넣어줌
+					 arr[i] = null;
+				} else {
+					arr[i] = arr[i+1];	//배열 중간에 빈 공간을 두지 않기 위해서
+				}
+			}
+			count--;
 		}
 	}
-
 }

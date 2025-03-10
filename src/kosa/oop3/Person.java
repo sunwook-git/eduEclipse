@@ -25,7 +25,7 @@ public class Person {
 		this.name = name;
 	}
 
-	public void doIt() {
+	public void doIt() {		//work는 work에서 호출한 doing, student는 student에서 오버라이딩한 doing이호출
 		role.doing();
 	}
 }

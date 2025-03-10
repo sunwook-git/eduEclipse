@@ -2,6 +2,7 @@ package kosa.oop3;
 
 public class MyThread implements Runnable {
 
+//어떤 인터페이스를 implements를 하면 오버라이딩해야하는 메소드가 있다.
 	@Override
 	public void run() {
 		// 멀티스레드 작업 내용 작성

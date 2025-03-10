@@ -5,34 +5,29 @@ import java.util.Scanner;
 public class BaseBallMain {
 
 	public static void main(String[] args) {
+		BaseBall b = new BaseBall();		//BaseBall 객체 생성
 		Scanner sc = new Scanner(System.in);
-		int a,b,c;
-			a = (int)(Math.random() * 3) + 1;
-
-		do {
-			b = (int)(Math.random() * 3) + 1;
-		} while (a == b);
+		
+		//지역변수 이므로 초기화
+		int strike = 0;	//Strike 변수 초기화	
+		int ball = 0;		// ball 변수 초기화
+		int count = 0;	//
+		int input[] = new int[3];
 		
 		do {
-			c = (int)(Math.random() * 3) + 1;
-		} while (a==b | b==c);
+			System.out.print("게임도전");
+			System.out.print("숫자(3자리) 입력: ");
+			for (int i = 0; i < 3; i++) {
+				input[i] = sc.nextInt();			
+			}
 		
-		int arr[] = {a,b,c};
-		System.out.println("정답 : " + arr[0] + arr[1] + arr[2]);
-		
-		//중복되지 않는 임의의 난수 1~9까지 난수 3자리 구하기 
-		
-		
-		//키보드로 부터 3개의 숫자를 입력 받는다.
-		int arr2[] = new int[3];
-		
-		for (int i = 0; i < arr2.length; i++) {
-			System.out.print("입력 : ");
-			arr2[i] = sc.nextInt();
+			strike = b.countStrike(input);
+			ball = b.countBall(input);
+			System.out.println(strike + "S" + ball + "B");
+			count++;
 			
-			if (arr[0] == arr2[0]) {
-				System.out.println("정답");
-			} 					
-		}
+		} while (strike !=3 );	//스크라이크가 3이될때까지 반복
+		
+			System.out.println(count + "번째 성공했습니다.");
 	}
 }

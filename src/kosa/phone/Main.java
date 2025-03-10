@@ -25,7 +25,7 @@ public class Main {
 				m.searchPhoneInfo();
 				break;
 			case "4":
-				m.changePhoneInfo();
+				m.updatePhoneInfo();
 				break;
 			case "5":
 				m.deletePhoneInfo();

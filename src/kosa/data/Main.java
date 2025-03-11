@@ -1,19 +1,21 @@
 package kosa.data;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
 
 	public static void main(String[] args) {
 		
-		Food food = new Food("짜장면", 30000);
-		Food food2 = new Food("짬뽕", 50000);
+		//Food food = new Food("짜장면", 30000);
+		//Food food2 = new Food("짬뽕", 50000);
+		List<Food> list = new ArrayList<Food>(); 
 		
-		//Order order = new Order("면", "3개", );
 		
-		System.out.print("1. 주문요청  2. 주문처리 3. 매출액 총액 4. 종료");
-		System.out.println("메뉴입력: ");
+		System.out.println("1. 주문요청  2. 주문처리 3. 매출액 총액 4. 종료");
+		System.out.print("메뉴입력: ");
 		Scanner sc = new Scanner(System.in);
 		String menu = sc.nextLine();
 		

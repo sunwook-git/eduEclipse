@@ -7,7 +7,7 @@ public class StackMission {
 	public static void main(String[] args) {
 		// 과제1 키보드로부터 수학 수식을 입력
 		// ((2+3)+10) => 괄로 일치 / 불일치 판단
-		// 스택에 큐를 
+		// 스택에 큐를 저장하여 비교
 		
 		//과제2 Phone의 manager의 private PhoneInfo arr[]; 를 List로 변경
 

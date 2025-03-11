@@ -6,7 +6,7 @@ public class Manager {
 	// 전화번호 목록을 관리하는 기능(추가, 출력, 검색 등등)
 
 	// 여러개의 PhoneInfo 객체를 관리하기 위하여 배열사용 (Manager 객체를 생성할때 메모리 올라옴)
-	private PhoneInfo arr[];
+	private PhoneInfo arr[];  
 	private int count;
 	// private Scanner sc;
 

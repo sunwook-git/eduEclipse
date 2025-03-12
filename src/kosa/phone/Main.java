@@ -10,7 +10,7 @@ public class Main {
 		Company cp = new Company();
 		
 		while(true) {			
-			System.out.println("1.추가 2.출력 3.검색 4.수정 5.삭제 6.종료");
+			System.out.println("1.추가 2.출력 3.검색 4.수정 5.삭제 6.저장 7.불러오기 8.종료");
 			System.out.print("메뉴입력 : ");
 			String menu = DataInput.sc.nextLine();
 				

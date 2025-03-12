@@ -1,6 +1,6 @@
 package kosa.data;
 
-public class Food {
+public class Food {		//하나의 메뉴에 대한 내용 가지고 있음
 	private String foodName;
 	private int price;
 	
@@ -34,7 +34,5 @@ public class Food {
 	public void show() {
 		System.out.println("음식이름: " + foodName);
 		System.out.println("가격: " +  price);
-	}
-	
-	
+	}	
 }

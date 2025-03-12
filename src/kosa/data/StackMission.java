@@ -1,33 +1,57 @@
 package kosa.data;
 
-import kosa.phone.PhoneInfo;
+import java.util.Scanner;
+import java.util.Stack;
 
 public class StackMission {
 
 	public static void main(String[] args) {
-		// °úÁ¦1 Å°º¸µå·ÎºÎÅÍ ¼öÇĞ ¼ö½ÄÀ» ÀÔ·Â
-		// ((2+3)+10) => °ı·Î ÀÏÄ¡ / ºÒÀÏÄ¡ ÆÇ´Ü
-		// ½ºÅÃ¿¡ Å¥¸¦ ÀúÀåÇÏ¿© ºñ±³
+		// ê³¼ì œ1 í‚¤ë³´ë“œë¡œë¶€í„° ìˆ˜í•™ ìˆ˜ì‹ì„ ì…ë ¥
+		// ((2+3)+10) => ê´„ë¡œ ì¼ì¹˜ / ë¶ˆì¼ì¹˜ íŒë‹¨
+		// ìŠ¤íƒì— íë¥¼ ì €ì¥í•˜ì—¬ ë¹„êµ
+		Scanner sc = new Scanner(System.in);
+		Stack<String> stack = new Stack<String>();
 		
-		//°úÁ¦2 PhoneÀÇ managerÀÇ private PhoneInfo arr[]; ¸¦ List·Î º¯°æ
+		System.out.print("ìˆ˜ì‹ì…ë ¥: ");
+		String str = sc.nextLine();		// ((2+3)+10) ì…ë ¥
+		
+		//ì˜ˆì™¸ ë°œìƒí• ìˆ˜ ìˆìœ¼ë¯€ë¡œ try catchì‚¬ìš©
+		try {
+			for (int i = 0; i < str.length(); i++) {
+				char ch = str.charAt(i);
+				
+				if (ch == '(') {
+					stack.push(ch+"");	// ch+"" : chí˜•ì„ Stringìœ¼ë¡œ ë³€í™˜
+				} else if (ch == ')') {
+					stack.pop();		//ì œì¼ ìµœê·¼ì— ë“¤ì–´ì˜¨ ê²ƒë¶€í„° ë¹ ì§„ë‹¤, ê´„í˜¸ê°€ ë¶€ì¡±í•˜ë©´ ì˜ˆì™¸ë°œìƒ
+				}
+			}
+			if (stack.isEmpty()) {
+				System.out.println("ê´„í˜¸ê°€ ì¼ì¹˜í•©ë‹ˆë‹¤.");
+			} else {
+				System.out.println("ê´„í˜¸ê°€ ë¶ˆì¼ì¹˜ í•©ë‹ˆë‹¤.");
+			}
+			
+		} catch (Exception e) {
+			System.out.println("ê´„í˜¸ê°€ ë¶ˆì¼ì¹˜ í•©ë‹ˆë‹¤.");
+		}
+		
+		//ê³¼ì œ2 Phoneì˜ managerì˜ private PhoneInfo arr[]; ë¥¼ Listë¡œ ë³€ê²½
 
-		//°úÁ¦3 ½Ä´ç ÁÖ¹®°ü¸® ÇÁ·Î±×·¥(Å¥ ±¸Á¶)
-//		1. ÁÖ¹®¿äÃ»  2. ÁÖ¹®Ã³¸® 3. ¸ÅÃâ¾× ÃÑ¾× 4. Á¾·á
+		//ê³¼ì œ3 ì‹ë‹¹ ì£¼ë¬¸ê´€ë¦¬ í”„ë¡œê·¸ë¨(í êµ¬ì¡°)
+//		1. ì£¼ë¬¸ìš”ì²­  2. ì£¼ë¬¸ì²˜ë¦¬ 3. ë§¤ì¶œì•¡ ì´ì•¡ 4. ì¢…ë£Œ
 //
-//		ÀÔ·Â 1>Food(foodName, price)
-//		          Order(Food, amount)»ı¼º => ÀÚ·á±¸Á¶ Ãß°¡
-//		-> food°´Ã¼ new·Î 2°³Á¤µµ »ı¼º
-//		-> ÁÖ¹®¿äÃ» new order
+//		ì…ë ¥ 1>Food(foodName, price)
+//		          Order(Food, amount)ìƒì„± => ìë£Œêµ¬ì¡° ì¶”ê°€
+//		-> foodê°ì²´ newë¡œ 2ê°œì •ë„ ìƒì„±
+//		-> ì£¼ë¬¸ìš”ì²­ new order
 //		      - Food
 //			  - amount	  
-//		-> Å¥ ÀÚ·á±¸Á¶¿¡ orderÃß°¡ 
+//		-> í ìë£Œêµ¬ì¡°ì— orderì¶”ê°€ 
 //
-//		ÀÔ·Â 2> ÀÚ·á±¸Á¶¿¡ ÀÖ´Â ÁÖ¹®Ã³¸®(ÁÖ¹®µÈ ³»¿ë Ãâ·Â)
+//		ì…ë ¥ 2> ìë£Œêµ¬ì¡°ì— ìˆëŠ” ì£¼ë¬¸ì²˜ë¦¬(ì£¼ë¬¸ëœ ë‚´ìš© ì¶œë ¥)
 //
-//		ÀÔ·Â 3> ÁÖ¹®Ã³¸®µÈ ¸Ş´º¿¡ ´ëÇÑ ÇÕ°èÃâ·Â
-		
-		
-		
+//		ì…ë ¥ 3> ì£¼ë¬¸ì²˜ë¦¬ëœ ë©”ë‰´ì— ëŒ€í•œ í•©ê³„ì¶œë ¥
 		
 	}
 

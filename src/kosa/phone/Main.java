@@ -31,6 +31,12 @@ public class Main {
 				m.deletePhoneInfo();
 				break;
 			case "6":
+				m.savePhoneInfo();
+				break;
+			case "7":
+				m.loadPhoneInfo();
+				break;
+			case "8":
 				System.out.println("프로그램 종료");
 				return;
 			}

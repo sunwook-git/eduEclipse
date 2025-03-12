@@ -1,6 +1,9 @@
 package kosa.phone;
 
-public class PhoneInfo {
+import java.io.Serializable;
+
+//객체 직렬화 하기위해 Serializable  implements 해준다
+public class PhoneInfo implements Serializable {
 	//매개 변수 작성
 		private String name;
 		private String phoneNo;

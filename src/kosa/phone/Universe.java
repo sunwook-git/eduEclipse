@@ -1,6 +1,9 @@
 package kosa.phone;
 
-public class Universe extends PhoneInfo {
+import java.io.Serializable;
+
+//객체 직렬화 하기위해 Serializable  implements 해준다
+public class Universe extends PhoneInfo implements Serializable {
 	private String major;
 	private String year;
 	

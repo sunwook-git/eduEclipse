@@ -1,5 +1,9 @@
 package kosa.phone;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -156,4 +160,39 @@ public class Manager {
 			System.out.println("존재하지 않습니다.");
 		}
 	}
+	
+	// 저장
+	public void savePhoneInfo() {
+		ObjectOutputStream oos = null;
+		try {
+			oos = new ObjectOutputStream(new FileOutputStream("phoneinfo.txt"));
+			oos.writeObject(list);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				oos.close();
+			} catch (Exception e2) {
+				
+			}
+		}
+	}
+	
+	//불러오기
+	public void loadPhoneInfo() {
+		ObjectInputStream ois = null;
+		try {
+			ois = new ObjectInputStream(new FileInputStream("phoneinfo.txt"));
+			list = (List)ois.readObject();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				ois.close();
+			} catch (Exception e2) {
+			
+			}
+		}
+	}
+	
 }

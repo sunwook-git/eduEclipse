@@ -48,6 +48,6 @@ public class Order {
 	public void show() {
 		food.show();
 		System.out.println("주문수량: " + amount);
-		System.out.println("가격 : " + food.getPrice());
+		System.out.println("가격 : " + total);
 	}
 }

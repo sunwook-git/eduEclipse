@@ -29,11 +29,11 @@ public class StreamExam {
 
 		
 		//List에 Student 객체 넣고 객체 바로 생성
-		List<Student> list = Arrays.asList(
-				new Student("홍길동",90),
-				new Student("홍동길",80),
-				new Student("김길동",70)				
-				);
+//		List<Student> list = Arrays.asList(
+//				new Student("홍길동",90),
+//				new Student("홍동길",80),
+//				new Student("김길동",70)				
+//				);
 //		
 //		list.stream().mapToInt(s -> s.getScore())
 //								.forEach(score -> System.out.println(score));
@@ -44,14 +44,19 @@ public class StreamExam {
 //							.forEach(name -> System.out.println(name));
 		
 		
-		//스크림을 이용해서 "홍" 씨만 출력하세요 => filter
-		list.stream()
-			//객체의 이름의 첫번째가 홍씨로 시작하는 사람을 필터링
-			//s : 3개의 student객체가 들어옴
-			.filter(s -> s.getName().startsWith("홍"))	
+		//스크림을 이용해서 "홍" 씨만 출력하세요 => filter		
+		//객체의 이름의 첫번째가 홍씨로 시작하는 사람을 필터링
+		//s : 3개의 student객체가 들어옴
+		//list.stream()	
+		//.filter(s -> s.getName().startsWith("홍"))	
 			
 			//아래에서 s는 필터링된 2개의 객체가 들어옴
-			.forEach(s -> System.out.println(s.getName()));
+			//.forEach(s -> System.out.println(s.getName()));
+		
+		String arr[] = {"BB", "CC", "AA"};
+//		List<String> list2 = Arrays.asList(arr);
+//		list2.stream().sorted().forEach(System.out::println);
+			Arrays.stream(arr).sorted().forEach(System.out::println);
 		
 	}
 }

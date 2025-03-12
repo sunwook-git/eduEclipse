@@ -10,7 +10,7 @@ public class Main {
 	static int totalSales = 0;
 	
 	public static void main(String[] args) {
-		LinkedList<Order> list= new LinkedList<Order>();
+		LinkedList<Order> list = new LinkedList<Order>();
 			
 			while(true) {				
 				System.out.println("1. 주문요청  2. 주문처리 3. 매출액 총액 4. 종료");
